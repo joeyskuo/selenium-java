@@ -12,7 +12,7 @@ public class BaseTest {
 	protected WebDriver driver;
 	
   @BeforeTest
-  public void beforeClass() {
+  public void beforeTest() {
 	  driver = new FirefoxDriver();
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  
   }

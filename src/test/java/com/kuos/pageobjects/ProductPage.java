@@ -5,17 +5,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProductPage {
+import com.kuos.base.BasePage;
+
+public class ProductPage extends BasePage{
 	
 	WebDriver driver;
 	
 	public ProductPage(WebDriver driver){
+		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
 	private final static String ADD_TO_CART_BUTTON_ID = "add-to-cart-button";
-
+	private final static String ADDED_TO_CART_CONFIRMED_ID = "confirm-text";
     
     
 	@FindBy(id=ADD_TO_CART_BUTTON_ID)
@@ -24,4 +27,8 @@ public class ProductPage {
 	public void clickAddToCartButton(){
 		addToCartButton.click();
 	}
+	
+	public Boolean verifyAddedToCart(){
+		return isElementPresent(ADDED_TO_CART_CONFIRMED_ID, "id");
+	}	
 }

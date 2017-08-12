@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Amazon TestSuite" parallel="tests"
+	thread-count="2">
+
+	<test name="Search Result Test">
+		<classes>
+			<class name="com.kuos.tests.SearchResultTest" />
+		</classes>
+	</test>
+
+	<test name="Banner Item to Cart Test">
+		<classes>
+			<class name="com.kuos.tests.BannerToCartTest" />
+		</classes>
+	</test>
+
+
+</suite>

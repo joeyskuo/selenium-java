@@ -20,13 +20,13 @@ public class SearchResultTest extends BaseTest {
   }
 
   @BeforeClass
-  public void beforeTest() {
+  public void beforeClass() {
 	  homepage = new HomePage(driver);
 	  homepage.goToHomePage();
   }
 
   @AfterClass
-  public void afterTest() {
+  public void afterClass() {
 	  closeBrowser();
   }
 

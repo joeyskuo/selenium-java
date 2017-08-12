@@ -1,6 +1,7 @@
 package com.kuos.tests;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -15,20 +16,21 @@ public class BannerToCartTest extends BaseTest{
   ProductPage productpage;
   
   @Test
-  public void f() {
+  public void addBannerItemToCart() {
 		homepage.clickInlineBanner();
 		productpage.clickAddToCartButton();
+		Assert.assertTrue(productpage.verifyAddedToCart());
   }
 
   @BeforeClass
-  public void beforeTest() {
+  public void beforeClass() {
 	  homepage = new HomePage(driver);
 	  productpage = new ProductPage(driver);
 	  homepage.goToHomePage();
   }
 
   @AfterClass
-  public void afterTest() {
+  public void afterClass() {
 	  closeBrowser();
   }
 
